@@ -1,0 +1,252 @@
+(name, ht, wt, arm len, hand size, 40, vert, broad, 3 cone, 20yrd shuttle)
+
+```{r}
+QB.HS = c("Baker Mayfield", 72.625, 215, 30.25, 9.25, 4.84, 29, 111, 7, 4.28, 13, .638, 1.93, .462, 
+                        "Sam Darnold", 75.375, 221, 31, 9.375, 4.85, 26.5, 105, 6.96, 4.4, 13, .578, 1.13, .307, 
+                        "Josh Allen", 76.875, 237, 33.25, 10.125, 4.75, 33.5, 119, 6.9, 4.4, 11, .528, .833, .455, 
+                        "Josh Rosen", 76, 226, 31.75, 9.875, 4.92, 31, 111, 7.09, 4.28, 13, .552, .786, .231, 
+                        "Lamar Jackson", 74.125, 216, 33.125, 9.5, NA, NA, NA, NA, NA, 7, .582, 2, .857, 
+                        "Mitchell Tribusky", 74, 222, 32, 9.5, 4.67, 27.5, 116, 6.87, 4.25, 26/2, .634, 1.63, .577, 
+                        "Patrick Mahomes", 74, 225, 33.25, 9.25, 4.8, 30, 114, 6.88, 4.08, 17/2, .659, 3.85, .765, 
+                        "Deshaun Watson", 74, 221, 33, 9.75, 4.66, 32.5, 119, 6.95, 4.31, 22/2, .664, 2.65, .636, 
+                        "Jared Goff", 76, 215, 32.75, 9, 4.82, 27, 110, 7.17, 4.47, 38/3, .621, 2.5, .632,
+                        "Carson Wentz", 77, 237, 33.25, 10, 4.77, 30.5, 118, 6.86, 4.15, 40/3, .637, 2.5, .575, 
+                        "Paxton Lynch", 79, 244, 34.25, 10.25, 4.86, 36, 118, 7.14, 4.26, 4/3, .617, 1, .25, 
+                        "Jameis Winston", 76, 231, 32, 9.375, 4.97, 28.5, 103, 7.16, 4.36, 54/4, .616, 1.52, .389, 
+                        "Marcus Mariota", 76, 222, 32, 9.875, 4.52, 36, 121, 6.87, 4.11, 55/4, .632, 1.64, .491, 
+                        "Blake Bortles", 77, 232, 32.875, 9.375, 4.93, 32.5, 115, 7.08, 4.21, 73/5, .593, 1.37, .329, 
+                        "Johnny Manziel", 71.75, 207, 31.375, 9.875, 4.68, 31.5, 113, 6.75, 4.03, 8/5, .570, 1, .25,
+                        "Teddy Bridgewater", 74.125, 214, 33, 9.25, 4.78, 30, 113, 7.17, 4.2, 29/5, .646, 1.26, .586, 
+                        "EJ Manuel", 76.625, 237, 35, 10.375, 4.65, 34, 118, 7.08, 4.21, 18/6, .581, 1.25, .333, 
+                        "Andrew Luck", 76, 234, 32.625, 10, 4.67, 36, 124, 6.8, 4.28, 86/7, .608, 2.06, 616, 
+                        "Robert Griffin", 74, 223, 32.25, 9.5, 4.41, 39, 120, NA, NA, 40/7, .632, 1.62, .375, 
+                        "Ryan Tannehill", 76, 221, 32.675, 9, NA, NA, NA, NA, NA, 88/7, .628, 1.64, .477, 
+                        "Brandon Weeden", 76, 221, 31.75, 9.625, 4.89, 32, 102, 7.36, 4.45, 25/7, .579, 1.03, .24, 
+                        "Cam Newton", 77, 248, 33.75, 9.875, 4.56, 35, 126, 6.92, 4.18, 122/8, .600, 1.70, .557, 
+                        "Jake Locker", 75, 231, 31.625, 9.625, 4.51, 35, 115, NA, 4.12, 23/8, .575, 1.23, .391, 
+                        "Blaine Gabbert", 76, 234, 33, 10, 4.61, 33.5, 120, NA, 4.26, 48/8, .562, 1.02, .271, 
+                        "Christian Ponder", 74, 229, 32.125, 10.25, 4.63, 34, 116, NA, 4.09, 36/8, .600, 1.06, .389,
+                        "Sam Bradford", 76, 236, 34.375, 9.5, 4.79, NA, NA, NA, NA, 83/9, .625, 1.69, .410,  
+                        "Tim Tebow", 75, 236, 31.75, 10.125, 4.71, 38.5, 115, 6.66, 4.17, 16/9, .479, 1.89, .571)
+for (i in seq(1,length(QB.HS))) (
+  if (i %% 14 == 13) {
+    print(QB.HS[i])
+  }
+)
+QB.DF = data.frame("Name"= c("Baker Mayfield", "Sam Darnold", "Josh Allen", "Josh Rosen", "Lamar Jackson", "Mitchell Trubisky", "Patrick Mahomes", "Deshaun Watson", "Jared Goff", "Carson Wentz", "Paxton Lynch", "Jameis Winston", "Marcus Mariota", "Blake Bortles", "Johnny Manziel", "Teddy Bridgewater", "EJ Manuel", "Andrew Luck", "Robert Griffin", "Ryan Tannehill", "Brandon Weeden", "Cam Newton", "Jake Locker", "Blaine Gabbert", "Christian Ponder", "Sam Bradford", "Tim Tebow"), 
+                   "Height" = c(72.625, 75.375, 76.875, 76, 74.125, 74, 74, 74, 76, 77, 79, 76, 76, 77, 71.75, 74.125, 76.625, 76, 74, 76, 76, 77, 75, 76, 74, 76, 75), 
+                   "Weight" = c(215, 221, 237, 226, 216, 222, 225, 221, 215, 237, 244, 231, 222, 232, 207, 214, 237, 234, 223, 221, 221, 248, 231, 234, 229, 236, 236), 
+                   "Arm Size" = c(30.25, 31, 33.25, 31.75, 33.125, 32, 33.25, 33, 32.75, 33.25, 34.25, 32, 32, 32.875, 31.375, 33, 35, 32.625, 32.25, 32.675, 31.75, 33.75, 31.625, 33, 32.125, 34.375, 31.75), 
+                   "Hand Size" = c(9.25, 9.375, 10.125, 9.875, 9.5, 9.5, 9.25, 9.75, 9, 10, 10.25, 9.375, 9.875, 9.375, 9.875, 9.25, 10.375, 10, 9.5, 9, 9.625, 9.875, 9.625, 10, 10.25, 9.5, 10.125), 
+                   "40 Yard Dash" = c(4.84, 4.85, 4.75, 4.92, NA, 4.67, 4.8, 4.66, 4.82, 4.77, 4.86, 4.97, 4.52, 4.93, 4.68, 4.78, 4.65, 4.67, 4.41, NA, 4.89, 4.56, 4.51, 4.61, 4.63, 4.79, 4.71), 
+                   "Vert" = c(29, 26.5, 33.5, 31, NA, 27.5, 30, 32.5, 27, 30.5, 36, 28.5, 36, 32.5, 31.5, 30, 34, 36, 39, NA, 32, 35, 35, 33.5, 34, NA, 38.5), 
+                   "Broad" = c(111, 105, 119, 111, NA, 116, 114, 119, 110, 118, 118, 103, 121, 115, 113, 113, 118, 124, 120, NA, 102, 126, 115, 120, 116, NA, 115), 
+                   "3-Cone" = c(7, 6.96, 6.9, 7.09, NA, 6.87, 6.88, 6.95, 7.17, 6.86, 7.14, 7.16, 6.87, 7.08, 6.75, 7.17, 7.08, 6.8, NA, NA, 7.36, 6.92, NA, NA, NA, NA, 6.66), 
+                   "20 Yard Shuttle" = c(4.28, 4.4, 4.4, 4.28, NA, 4.25, 4.08, 4.31, 4.47, 4.15, 4.26, 4.36, 4.11, 4.21, 4.03, 4.2, 4.21, 4.28, NA, NA, 4.45, 4.18, 4.12, 4.26, 4.09, NA, 4.17), 
+                   "GS/Years Since Draft" = c(13, 13, 11, 13, 7, 13, 8.5, 11, 12.7, 13.3, 1.3, 13.5, 13.75, 14.6, 1.6, 5.8, 3, 12.3, 5.71, 12.6, 3.57, 15.3, 2.88, 6, 4.5, 9.22, 1.78), 
+                   "Cmp %" = c(63.8, 57.8, 52.8, 55.2, 58.2, 63.4, 65.9, 66.4, 62.1, 63.7, 61.7, 61.6, 63.2, 59.3, 57, 64.6, 58.1, 60.8, 63.2, 62.8, 57.9, 60, 57.5, 56.2, 60, 62.5, 47.9), 
+                   "TD:INT" = c(1.93, 1.13, .833, .786, 2, 1.63, 3.85, 2.65, 2.5, 2.5, 1, 1.52, 1.64, 1.37, 1, 1.26, 1.25, 2.06, 1.62, 1.64, 1.03, 1.7, 1.23, 1.02, 1.06, 1.69, 1.89), 
+                   "Win %" = c(46.2, 30.7, 45.5, 23.1, 85.7, 57.7, 76.5, 63.6, 63.2, 57.5, 25, 28.9, 49.1, 32.9, 25, 58.6, 33.3, 61.6, 37.5, 47.7, 24, 55.7, 39.1, 27.1, 38.9, 41, 57.1))
+
+print(QB.DF)
+
+```
+
+```{r}
+plot(QB.DF$Height, QB.DF$GS.Years.Since.Draft, xlab = "Height", ylab = "Average Games Started Since Draft Year", main = "Height vs Games Started", col = "Blue")
+abline(reg = lm(GS.Years.Since.Draft~Height, data = QB.DF), col = "Red")
+lm(GS.Years.Since.Draft~Height, data = QB.DF)
+cor(QB.DF$Height, QB.DF$GS.Years.Since.Draft)
+
+plot(QB.DF$Height, QB.DF$Cmp.., xlab = "Height (in)", ylab = "Completion %", main = "Height vs Completion %")
+abline(reg = lm(Cmp..~Height, data = QB.DF), col = "Red")
+lm(Cmp..~Height, data = QB.DF)
+cor(QB.DF$Height, QB.DF$Cmp..)
+
+plot(QB.DF$Height, QB.DF$TD.INT, xlab = "Height (in)", ylab = "TD:INT Ratio", main = "Height vs TD:INT Ratio")
+abline(reg = lm(TD.INT~Height, data = QB.DF), col = "Red")
+lm(TD.INT~Height, data = QB.DF)
+cor(QB.DF$Height, QB.DF$TD.INT)
+
+plot(QB.DF$Height, QB.DF$Win.., xlab = "Height (in)", ylab = "Win %", main = "Height vs Win %")
+abline(reg = lm(Win..~Height, data = QB.DF), col = "Red")
+lm(Win..~Height, data = QB.DF)
+cor(QB.DF$Height, QB.DF$Win..)
+```
+
+```{r}
+plot(QB.DF$Weight, QB.DF$GS.Years.Since.Draft, xlab = "Weight (lbs)", ylab = "Average Games Started Since Draft Year", main = "Weight vs Games Started")
+abline(reg = lm(GS.Years.Since.Draft~Weight, data = QB.DF), col = "Red")
+lm(GS.Years.Since.Draft~Weight, data = QB.DF)
+cor(QB.DF$Weight, QB.DF$GS.Years.Since.Draft)
+
+plot(QB.DF$Weight, QB.DF$Cmp.., xlab = "Weight (lbs)", ylab = "Completion %", main = "Weight vs Completion %")
+abline(reg = lm(Cmp..~Weight, data = QB.DF), col = "Red")
+lm(Cmp..~Weight, data = QB.DF)
+cor(QB.DF$Weight, QB.DF$Cmp..)
+
+plot(QB.DF$Weight, QB.DF$TD.INT, xlab = "Weight(lbs)", ylab = "TD:INT Ratio", main = "Weight vs TD:INT Ratio")
+abline(reg = lm(TD.INT~Weight, data = QB.DF), col = "Red")
+lm(TD.INT~Weight, data = QB.DF)
+cor(QB.DF$Weight, QB.DF$TD.INT)
+
+plot(QB.DF$Weight, QB.DF$Win.., xlab = "Weight (lbs)", ylab = "Win %", main = "Weight vs Win %")
+abline(reg = lm(Win..~Weight, data = QB.DF), col = "Red")
+lm(Win..~Weight, data = QB.DF)
+cor(QB.DF$Weight, QB.DF$Win..)
+```
+
+```{r}
+plot(QB.DF$Arm.Size, QB.DF$GS.Years.Since.Draft, xlab = "Arm Size (in)", ylab = "Average Games Started Since Draft Year", main = "Arm Size vs Games Started")
+abline(reg = lm(GS.Years.Since.Draft~Arm.Size, data = QB.DF), col = "Red")
+lm(GS.Years.Since.Draft~Arm.Size, data = QB.DF)
+cor(QB.DF$Arm.Size, QB.DF$GS.Years.Since.Draft)
+
+plot(QB.DF$Arm.Size, QB.DF$Cmp.., xlab = "Arm Size (in)", ylab = "Completion %", main = "Arm Size vs Completion %")
+abline(reg = lm(Cmp..~Arm.Size, data = QB.DF), col = "Red")
+lm(Cmp..~Arm.Size, data = QB.DF)
+cor(QB.DF$Arm.Size, QB.DF$Cmp..)
+
+plot(QB.DF$Arm.Size, QB.DF$TD.INT, xlab = "Arm Size (in)", ylab = "TD:INT Ratio", main = "Arm Size vs TD:INT Ratio")
+abline(reg = lm(TD.INT~Arm.Size, data = QB.DF), col = "Red")
+lm(TD.INT~Arm.Size, data = QB.DF)
+cor(QB.DF$Arm.Size, QB.DF$TD.INT)
+
+plot(QB.DF$Arm.Size, QB.DF$Win.., xlab = "Arm Size (in)", ylab = "Win %", main = "Arm Size vs Win %")
+abline(reg = lm(Win..~Arm.Size, data = QB.DF), col = "Red")
+lm(Win..~Arm.Size, data = QB.DF)
+cor(QB.DF$Arm.Size, QB.DF$Win..)
+```
+
+```{r}
+plot(QB.DF$Hand.Size, QB.DF$GS.Years.Since.Draft, xlab = "Hand Size (in)", ylab = "Average Games Started Since Draft Year", main = "Hand Size vs Games Started")
+abline(reg = lm(GS.Years.Since.Draft~Hand.Size, data = QB.DF), col = "Red")
+lm(GS.Years.Since.Draft~Hand.Size, data = QB.DF)
+cor(QB.DF$Hand.Size, QB.DF$GS.Years.Since.Draft)
+
+plot(QB.DF$Hand.Size, QB.DF$Cmp.., xlab = "Hand Size (in)", ylab = "Completion %", main = "Hand Size vs Completion %")
+abline(reg = lm(Cmp..~Hand.Size, data = QB.DF), col = "Red")
+lm(Cmp..~Hand.Size, data = QB.DF)
+cor(QB.DF$Hand.Size, QB.DF$Cmp..)
+
+plot(QB.DF$Hand.Size, QB.DF$TD.INT, xlab = "Hand Size (in)", ylab = "TD:INT Ratio", main = "Hand Size vs TD:INT Ratio")
+abline(reg = lm(TD.INT~Hand.Size, data = QB.DF), col = "Red")
+lm(TD.INT~Hand.Size, data = QB.DF)
+cor(QB.DF$Hand.Size, QB.DF$TD.INT)
+
+plot(QB.DF$Hand.Size, QB.DF$Win.., xlab = "Hand Size (in)", ylab = "Win %", main = "Hand Size vs Win %")
+abline(reg = lm(Win..~Hand.Size, data = QB.DF), col = "Red")
+lm(Win..~Hand.Size, data = QB.DF)
+cor(QB.DF$Hand.Size, QB.DF$Win..)
+```
+
+```{r}
+plot(QB.DF$X40.Yard.Dash, QB.DF$GS.Years.Since.Draft, xlab = "40 Yard Dash (s)", ylab = "Average Games Started Since Draft Year", main = "40 Yard Dash vs Games Started")
+abline(reg = lm(GS.Years.Since.Draft~X40.Yard.Dash, data = QB.DF), col = "Red")
+lm(GS.Years.Since.Draft~X40.Yard.Dash, data = QB.DF)
+cor(QB.DF$X40.Yard.Dash, QB.DF$GS.Years.Since.Draft, use = "complete")
+
+plot(QB.DF$X40.Yard.Dash, QB.DF$Cmp.., xlab = "40 Yard Dash (s)", ylab = "Completion %", main = "40 Yard Dash vs Completion %")
+abline(reg = lm(Cmp..~X40.Yard.Dash, data = QB.DF), col = "Red")
+lm(Cmp..~X40.Yard.Dash, data = QB.DF)
+cor(QB.DF$X40.Yard.Dash, QB.DF$Cmp.., use = "complete")
+
+plot(QB.DF$X40.Yard.Dash, QB.DF$TD.INT, xlab = "40 Yard Dash (s)", ylab = "TD:INT Ratio", main = "40 Yard Dash vs TD:INT Ratio")
+abline(reg = lm(TD.INT~X40.Yard.Dash, data = QB.DF), col = "Red")
+lm(TD.INT~X40.Yard.Dash, data = QB.DF)
+cor(QB.DF$X40.Yard.Dash, QB.DF$TD.INT, use = "complete")
+
+plot(QB.DF$X40.Yard.Dash, QB.DF$Win.., xlab = "40 Yard Dash (s)", ylab = "Win %", main = "40 Yard Dash vs Win %")
+abline(reg = lm(Win..~X40.Yard.Dash, data = QB.DF), col = "Red")
+lm(Win..~X40.Yard.Dash, data = QB.DF)
+cor(QB.DF$X40.Yard.Dash, QB.DF$Win.., use = "complete")
+```
+
+```{r}
+plot(QB.DF$Vert, QB.DF$GS.Years.Since.Draft, xlab = "Vertical Jump (in)", ylab = "Average Games Started Since Draft Year", main = "Vert vs Games Started")
+abline(reg = lm(GS.Years.Since.Draft~Vert, data = QB.DF), col = "Red")
+lm(GS.Years.Since.Draft~Vert, data = QB.DF)
+cor(QB.DF$Vert, QB.DF$GS.Years.Since.Draft, use = "complete")
+
+plot(QB.DF$Vert, QB.DF$Cmp.., xlab = "Vertical Jump (in)", ylab = "Completion %", main = "Vert vs Completion %")
+abline(reg = lm(Cmp..~Vert, data = QB.DF), col = "Red")
+lm(Cmp..~Vert, data = QB.DF)
+cor(QB.DF$Vert, QB.DF$Cmp.., use = "complete")
+
+plot(QB.DF$Vert, QB.DF$TD.INT, xlab = "Vertical Jump (in)", ylab = "TD:INT Ratio", main = "Vert vs TD:INT Ratio")
+abline(reg = lm(TD.INT~Vert, data = QB.DF), col = "Red")
+lm(TD.INT~Vert, data = QB.DF)
+cor(QB.DF$Vert, QB.DF$TD.INT, use = "complete")
+
+plot(QB.DF$Vert, QB.DF$Win.., xlab = "Vertical Jump (in)", ylab = "Win %", main = "Vert vs Win %")
+abline(reg = lm(Win..~Vert, data = QB.DF), col = "Red")
+lm(Win..~Vert, data = QB.DF)
+cor(QB.DF$Vert, QB.DF$Win.., use = "complete")
+```
+
+```{r}
+plot(QB.DF$Broad, QB.DF$GS.Years.Since.Draft, xlab = "Broad (in)", ylab = "Average Games Started Since Draft Year", main = "Broad vs Games Started")
+abline(reg = lm(GS.Years.Since.Draft~Broad, data = QB.DF), col = "Red")
+lm(GS.Years.Since.Draft~Broad, data = QB.DF)
+cor(QB.DF$Broad, QB.DF$GS.Years.Since.Draft, use = "complete")
+
+plot(QB.DF$Broad, QB.DF$Cmp.., xlab = "Broad (in)", ylab = "Completion %", main = "Broad vs Completion %")
+abline(reg = lm(Cmp..~Broad, data = QB.DF), col = "Red")
+lm(Cmp..~Broad, data = QB.DF)
+cor(QB.DF$Broad, QB.DF$Cmp.., use = "complete")
+
+plot(QB.DF$Broad, QB.DF$TD.INT, xlab = "Broad (in)", ylab = "TD:INT Ratio", main = "Broad vs TD:INT Ratio")
+abline(reg = lm(TD.INT~Broad, data = QB.DF), col = "Red")
+lm(TD.INT~Broad, data = QB.DF)
+cor(QB.DF$Broad, QB.DF$TD.INT, use = "complete")
+
+plot(QB.DF$Broad, QB.DF$Win.., xlab = "Broad (in)", ylab = "Win %", main = "Broad vs Win %")
+abline(reg = lm(Win..~Broad, data = QB.DF), col = "Red")
+lm(Win..~Broad, data = QB.DF)
+cor(QB.DF$Broad, QB.DF$Win.., use = "complete")
+```
+
+```{r}
+plot(QB.DF$X3.Cone, QB.DF$GS.Years.Since.Draft, xlab = "3 Cone (s)", ylab = "Average Games Started Since Draft Year", main = "3 Cone vs Games Started")
+abline(reg = lm(GS.Years.Since.Draft~X3.Cone, data = QB.DF), col = "Red")
+lm(GS.Years.Since.Draft~X3.Cone, data = QB.DF)
+cor(QB.DF$X3.Cone, QB.DF$GS.Years.Since.Draft, use = "complete")
+
+plot(QB.DF$X3.Cone, QB.DF$Cmp.., xlab = "3 Cone (s)", ylab = "Completion %", main = "3 Cone vs Completion %")
+abline(reg = lm(Cmp..~X3.Cone, data = QB.DF), col = "Red")
+lm(Cmp..~X3.Cone, data = QB.DF)
+cor(QB.DF$X3.Cone, QB.DF$Cmp.., use = "complete")
+
+plot(QB.DF$X3.Cone, QB.DF$TD.INT, xlab = "3 Cone (s)", ylab = "TD:INT Ratio", main = "3 Cone vs TD:INT Ratio")
+abline(reg = lm(TD.INT~X3.Cone, data = QB.DF), col = "Red")
+lm(TD.INT~X3.Cone, data = QB.DF)
+cor(QB.DF$X3.Cone, QB.DF$TD.INT, use = "complete")
+
+plot(QB.DF$X3.Cone, QB.DF$Win.., xlab = "3 Cone (s)", ylab = "Win %", main = "3 Cone vs Win %")
+abline(reg = lm(Win..~X3.Cone, data = QB.DF), col = "Red")
+lm(Win..~X3.Cone, data = QB.DF)
+cor(QB.DF$X3.Cone, QB.DF$Win.., use = "complete")
+```
+
+```{r}
+plot(QB.DF$X20.Yard.Shuttle, QB.DF$GS.Years.Since.Draft, xlab = "20 Yard Shuttle (s)", ylab = "Average Games Started Since Draft Year", main = "20 Yard Shuttle vs Games Started")
+abline(reg = lm(GS.Years.Since.Draft~X20.Yard.Shuttle, data = QB.DF), col = "Red")
+lm(GS.Years.Since.Draft~X20.Yard.Shuttle, data = QB.DF)
+cor(QB.DF$X20.Yard.Shuttle, QB.DF$GS.Years.Since.Draft, use = "complete")
+
+plot(QB.DF$X20.Yard.Shuttle, QB.DF$Cmp.., xlab = "20 Yard Shuttle (s)", ylab = "Completion %", main = "20 Yard Shuttle vs Completion %")
+abline(reg = lm(Cmp..~X20.Yard.Shuttle, data = QB.DF), col = "Red")
+lm(Cmp..~X20.Yard.Shuttle, data = QB.DF)
+cor(QB.DF$X20.Yard.Shuttle, QB.DF$Cmp.., use = "complete")
+
+plot(QB.DF$X20.Yard.Shuttle, QB.DF$TD.INT, xlab = "20 Yard Shuttle (s)", ylab = "TD:INT Ratio", main = "20 Yard Shuttle vs TD:INT Ratio")
+abline(reg = lm(TD.INT~X20.Yard.Shuttle, data = QB.DF), col = "Red")
+lm(TD.INT~X20.Yard.Shuttle, data = QB.DF)
+cor(QB.DF$X20.Yard.Shuttle, QB.DF$TD.INT, use = "complete")
+
+plot(QB.DF$X20.Yard.Shuttle, QB.DF$Win.., xlab = "20 Yard Shuttle (s)", ylab = "Win %", main = "20 Yard Shuttle vs Win %")
+abline(reg = lm(Win..~X20.Yard.Shuttle, data = QB.DF), col = "Red")
+lm(Win..~X20.Yard.Shuttle, data = QB.DF)
+cor(QB.DF$X20.Yard.Shuttle, QB.DF$Win.., use = "complete")
+```
+

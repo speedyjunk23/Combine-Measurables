@@ -28,11 +28,11 @@ QB.HS = c("Baker Mayfield", 72.625, 215, 30.25, 9.25, 4.84, 29, 111, 7, 4.28, 13
                         "Christian Ponder", 74, 229, 32.125, 10.25, 4.63, 34, 116, NA, 4.09, 36/8, .600, 1.06, .389,
                         "Sam Bradford", 76, 236, 34.375, 9.5, 4.79, NA, NA, NA, NA, 83/9, .625, 1.69, .410,  
                         "Tim Tebow", 75, 236, 31.75, 10.125, 4.71, 38.5, 115, 6.66, 4.17, 16/9, .479, 1.89, .571)
-for (i in seq(1,length(QB.HS))) (
-  if (i %% 14 == 13) {
-    print(QB.HS[i])
-  }
-)
+#for (i in seq(1,length(QB.HS))) (
+#  if (i %% 14 == 13) {
+#    print(QB.HS[i])
+#  }
+#)
 QB.DF = data.frame("Name"= c("Baker Mayfield", "Sam Darnold", "Josh Allen", "Josh Rosen", "Lamar Jackson", "Mitchell Trubisky", "Patrick Mahomes", "Deshaun Watson", "Jared Goff", "Carson Wentz", "Paxton Lynch", "Jameis Winston", "Marcus Mariota", "Blake Bortles", "Johnny Manziel", "Teddy Bridgewater", "EJ Manuel", "Andrew Luck", "Robert Griffin", "Ryan Tannehill", "Brandon Weeden", "Cam Newton", "Jake Locker", "Blaine Gabbert", "Christian Ponder", "Sam Bradford", "Tim Tebow"), 
                    "Height" = c(72.625, 75.375, 76.875, 76, 74.125, 74, 74, 74, 76, 77, 79, 76, 76, 77, 71.75, 74.125, 76.625, 76, 74, 76, 76, 77, 75, 76, 74, 76, 75), 
                    "Weight" = c(215, 221, 237, 226, 216, 222, 225, 221, 215, 237, 244, 231, 222, 232, 207, 214, 237, 234, 223, 221, 221, 248, 231, 234, 229, 236, 236), 
@@ -46,7 +46,8 @@ QB.DF = data.frame("Name"= c("Baker Mayfield", "Sam Darnold", "Josh Allen", "Jos
                    "GS/Years Since Draft" = c(13, 13, 11, 13, 7, 13, 8.5, 11, 12.7, 13.3, 1.3, 13.5, 13.75, 14.6, 1.6, 5.8, 3, 12.3, 5.71, 12.6, 3.57, 15.3, 2.88, 6, 4.5, 9.22, 1.78), 
                    "Cmp %" = c(63.8, 57.8, 52.8, 55.2, 58.2, 63.4, 65.9, 66.4, 62.1, 63.7, 61.7, 61.6, 63.2, 59.3, 57, 64.6, 58.1, 60.8, 63.2, 62.8, 57.9, 60, 57.5, 56.2, 60, 62.5, 47.9), 
                    "TD:INT" = c(1.93, 1.13, .833, .786, 2, 1.63, 3.85, 2.65, 2.5, 2.5, 1, 1.52, 1.64, 1.37, 1, 1.26, 1.25, 2.06, 1.62, 1.64, 1.03, 1.7, 1.23, 1.02, 1.06, 1.69, 1.89), 
-                   "Win %" = c(46.2, 30.7, 45.5, 23.1, 85.7, 57.7, 76.5, 63.6, 63.2, 57.5, 25, 28.9, 49.1, 32.9, 25, 58.6, 33.3, 61.6, 37.5, 47.7, 24, 55.7, 39.1, 27.1, 38.9, 41, 57.1))
+                   "Win %" = c(46.2, 30.7, 45.5, 23.1, 85.7, 57.7, 76.5, 63.6, 63.2, 57.5, 25, 28.9, 49.1, 32.9, 25, 58.6, 33.3, 61.6, 37.5, 47.7, 24, 55.7, 39.1, 27.1, 38.9, 41, 57.1),
+                   "Rtg" = c(93.7, 77.6, 67.9, 66.7, 84.5, 87.7, 103.1, 111.7, 94.7, 92.5, 76.7, 87.8, 89.4, 80.6, 74.4, 85.9, 77.1, 89.5, 88.2, 87, 76, 86.4, 79, 71.7, 75.9, 84.5, 75.3))
 
 print(QB.DF)
 
@@ -72,6 +73,11 @@ plot(QB.DF$Height, QB.DF$Win.., xlab = "Height (in)", ylab = "Win %", main = "He
 abline(reg = lm(Win..~Height, data = QB.DF), col = "Red")
 lm(Win..~Height, data = QB.DF)
 cor(QB.DF$Height, QB.DF$Win..)
+
+plot(QB.DF$Height, QB.DF$Rtg, xlab = "Height (in)", ylab = "Passer Rating", main = "Height vs Rtg")
+abline(reg = lm(Rtg~Height, data = QB.DF), col = "Red")
+lm(Rtg~Height, data = QB.DF)
+cor(QB.DF$Height, QB.DF$Rtg)
 ```
 
 ```{r}
@@ -94,6 +100,11 @@ plot(QB.DF$Weight, QB.DF$Win.., xlab = "Weight (lbs)", ylab = "Win %", main = "W
 abline(reg = lm(Win..~Weight, data = QB.DF), col = "Red")
 lm(Win..~Weight, data = QB.DF)
 cor(QB.DF$Weight, QB.DF$Win..)
+
+plot(QB.DF$Weight, QB.DF$Rtg, xlab = "Weight (lbs)", ylab = "Passer Rating", main = "Weight vs Rtg")
+abline(reg = lm(Rtg~Weight, data = QB.DF), col = "Red")
+lm(Rtg~Weight, data = QB.DF)
+cor(QB.DF$Weight, QB.DF$Rtg)
 ```
 
 ```{r}
@@ -116,6 +127,11 @@ plot(QB.DF$Arm.Size, QB.DF$Win.., xlab = "Arm Size (in)", ylab = "Win %", main =
 abline(reg = lm(Win..~Arm.Size, data = QB.DF), col = "Red")
 lm(Win..~Arm.Size, data = QB.DF)
 cor(QB.DF$Arm.Size, QB.DF$Win..)
+
+plot(QB.DF$Arm.Size, QB.DF$Rtg, xlab = "Arm Size (in)", ylab = "Passer Rating", main = "Arm Size vs Rtg")
+abline(reg = lm(Rtg~Arm.Size, data = QB.DF), col = "Red")
+lm(Rtg~Arm.Size, data = QB.DF)
+cor(QB.DF$Arm.Size, QB.DF$Rtg)
 ```
 
 ```{r}
@@ -138,6 +154,11 @@ plot(QB.DF$Hand.Size, QB.DF$Win.., xlab = "Hand Size (in)", ylab = "Win %", main
 abline(reg = lm(Win..~Hand.Size, data = QB.DF), col = "Red")
 lm(Win..~Hand.Size, data = QB.DF)
 cor(QB.DF$Hand.Size, QB.DF$Win..)
+
+plot(QB.DF$Hand.Size, QB.DF$Rtg, xlab = "Hand Size (in)", ylab = "Passer Rating", main = "Hand Size vs Rtg")
+abline(reg = lm(Rtg~Hand.Size, data = QB.DF), col = "Red")
+lm(Rtg~Hand.Size, data = QB.DF)
+cor(QB.DF$Hand.Size, QB.DF$Rtg)
 ```
 
 ```{r}
@@ -160,6 +181,11 @@ plot(QB.DF$X40.Yard.Dash, QB.DF$Win.., xlab = "40 Yard Dash (s)", ylab = "Win %"
 abline(reg = lm(Win..~X40.Yard.Dash, data = QB.DF), col = "Red")
 lm(Win..~X40.Yard.Dash, data = QB.DF)
 cor(QB.DF$X40.Yard.Dash, QB.DF$Win.., use = "complete")
+
+plot(QB.DF$X40.Yard.Dash, QB.DF$Rtg, xlab = "40 Yard Dash (s)", ylab = "Passer Rating", main = "40 Yard Dash vs Rtg")
+abline(reg = lm(Rtg~X40.Yard.Dash, data = QB.DF), col = "Red")
+lm(Rtg~X40.Yard.Dash, data = QB.DF)
+cor(QB.DF$X40.Yard.Dash, QB.DF$Rtg, use = "complete")
 ```
 
 ```{r}
@@ -182,6 +208,11 @@ plot(QB.DF$Vert, QB.DF$Win.., xlab = "Vertical Jump (in)", ylab = "Win %", main 
 abline(reg = lm(Win..~Vert, data = QB.DF), col = "Red")
 lm(Win..~Vert, data = QB.DF)
 cor(QB.DF$Vert, QB.DF$Win.., use = "complete")
+
+plot(QB.DF$Vert, QB.DF$Rtg, xlab = "Vertical jump (in)", ylab = "Passer Rating", main = "Vert vs Rtg")
+abline(reg = lm(Rtg~Vert, data = QB.DF), col = "Red")
+lm(Rtg~Vert, data = QB.DF)
+cor(QB.DF$Vert, QB.DF$Rtg, use = "complete")
 ```
 
 ```{r}
@@ -204,6 +235,11 @@ plot(QB.DF$Broad, QB.DF$Win.., xlab = "Broad (in)", ylab = "Win %", main = "Broa
 abline(reg = lm(Win..~Broad, data = QB.DF), col = "Red")
 lm(Win..~Broad, data = QB.DF)
 cor(QB.DF$Broad, QB.DF$Win.., use = "complete")
+
+plot(QB.DF$Broad, QB.DF$Rtg, xlab = "Broad (in)", ylab = "Passer Rating", main = "Broad vs Rtg")
+abline(reg = lm(Rtg~Broad, data = QB.DF), col = "Red")
+lm(Rtg~Broad, data = QB.DF)
+cor(QB.DF$Broad, QB.DF$Rtg, use = "complete")
 ```
 
 ```{r}
@@ -226,6 +262,11 @@ plot(QB.DF$X3.Cone, QB.DF$Win.., xlab = "3 Cone (s)", ylab = "Win %", main = "3 
 abline(reg = lm(Win..~X3.Cone, data = QB.DF), col = "Red")
 lm(Win..~X3.Cone, data = QB.DF)
 cor(QB.DF$X3.Cone, QB.DF$Win.., use = "complete")
+
+plot(QB.DF$X3.Cone, QB.DF$Rtg, xlab = "3 Cone (s)", ylab = "Passer Rating", main = "3 Cone vs Rtg")
+abline(reg = lm(Rtg~X3.Cone, data = QB.DF), col = "Red")
+lm(Rtg~X3.Cone, data = QB.DF)
+cor(QB.DF$X3.Cone, QB.DF$Rtg, use = "complete")
 ```
 
 ```{r}
@@ -248,5 +289,10 @@ plot(QB.DF$X20.Yard.Shuttle, QB.DF$Win.., xlab = "20 Yard Shuttle (s)", ylab = "
 abline(reg = lm(Win..~X20.Yard.Shuttle, data = QB.DF), col = "Red")
 lm(Win..~X20.Yard.Shuttle, data = QB.DF)
 cor(QB.DF$X20.Yard.Shuttle, QB.DF$Win.., use = "complete")
+
+plot(QB.DF$X20.Yard.Shuttle, QB.DF$Rtg, xlab = "20 Yard Shuttle (s)", ylab = "Passer Rating", main = "20 Yard Shuttle vs Rtg")
+abline(reg = lm(Rtg~X20.Yard.Shuttle, data = QB.DF), col = "Red")
+lm(Rtg~X20.Yard.Shuttle, data = QB.DF)
+cor(QB.DF$X20.Yard.Shuttle, QB.DF$Rtg, use = "complete")
 ```
 

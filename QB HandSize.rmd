@@ -1,7 +1,7 @@
 (name, ht, wt, arm len, hand size, 40, vert, broad, 3 cone, 20yrd shuttle)
 
 ```{r}
-QB.HS = c("Baker Mayfield", 72.625, 215, 30.25, 9.25, 4.84, 29, 111, 7, 4.28, 13, .638, 1.93, .462, 
+QB.HS =  c("Baker Mayfield", 72.625, 215, 30.25, 9.25, 4.84, 29, 111, 7, 4.28, 13, .638, 1.93, .462, 
                         "Sam Darnold", 75.375, 221, 31, 9.375, 4.85, 26.5, 105, 6.96, 4.4, 13, .578, 1.13, .307, 
                         "Josh Allen", 76.875, 237, 33.25, 10.125, 4.75, 33.5, 119, 6.9, 4.4, 11, .528, .833, .455, 
                         "Josh Rosen", 76, 226, 31.75, 9.875, 4.92, 31, 111, 7.09, 4.28, 13, .552, .786, .231, 
@@ -78,6 +78,8 @@ plot(QB.DF$Height, QB.DF$Rtg, xlab = "Height (in)", ylab = "Passer Rating", main
 abline(reg = lm(Rtg~Height, data = QB.DF), col = "Red")
 lm(Rtg~Height, data = QB.DF)
 cor(QB.DF$Height, QB.DF$Rtg)
+
+(abs(cor(QB.DF$Height, QB.DF$GS.Years.Since.Draft))+abs(cor(QB.DF$Height, QB.DF$Cmp..))+abs(cor(QB.DF$Height, QB.DF$TD.INT))+abs(cor(QB.DF$Height, QB.DF$Win..))+abs(cor(QB.DF$Height, QB.DF$Rtg)))/5
 ```
 
 ```{r}
@@ -105,6 +107,8 @@ plot(QB.DF$Weight, QB.DF$Rtg, xlab = "Weight (lbs)", ylab = "Passer Rating", mai
 abline(reg = lm(Rtg~Weight, data = QB.DF), col = "Red")
 lm(Rtg~Weight, data = QB.DF)
 cor(QB.DF$Weight, QB.DF$Rtg)
+
+(abs(cor(QB.DF$Weight, QB.DF$GS.Years.Since.Draft))+abs(cor(QB.DF$Weight, QB.DF$Cmp..))+abs(cor(QB.DF$Weight, QB.DF$TD.INT))+abs(cor(QB.DF$Weight, QB.DF$Win..))+abs(cor(QB.DF$Weight, QB.DF$Rtg)))/5
 ```
 
 ```{r}
@@ -132,6 +136,9 @@ plot(QB.DF$Arm.Size, QB.DF$Rtg, xlab = "Arm Size (in)", ylab = "Passer Rating", 
 abline(reg = lm(Rtg~Arm.Size, data = QB.DF), col = "Red")
 lm(Rtg~Arm.Size, data = QB.DF)
 cor(QB.DF$Arm.Size, QB.DF$Rtg)
+
+
+(abs(cor(QB.DF$Arm.Size, QB.DF$GS.Years.Since.Draft))+abs(cor(QB.DF$Arm.Size, QB.DF$Cmp..))+abs(cor(QB.DF$Arm.Size, QB.DF$TD.INT))+abs(cor(QB.DF$Arm.Size, QB.DF$Win..))+abs(cor(QB.DF$Arm.Size, QB.DF$Rtg)))/5
 ```
 
 ```{r}
@@ -159,6 +166,8 @@ plot(QB.DF$Hand.Size, QB.DF$Rtg, xlab = "Hand Size (in)", ylab = "Passer Rating"
 abline(reg = lm(Rtg~Hand.Size, data = QB.DF), col = "Red")
 lm(Rtg~Hand.Size, data = QB.DF)
 cor(QB.DF$Hand.Size, QB.DF$Rtg)
+
+(abs(cor(QB.DF$Hand.Size, QB.DF$GS.Years.Since.Draft))+abs(cor(QB.DF$Hand.Size, QB.DF$Cmp..))+abs(cor(QB.DF$Hand.Size, QB.DF$TD.INT))+abs(cor(QB.DF$Hand.Size, QB.DF$Win..))+abs(cor(QB.DF$Hand.Size, QB.DF$Rtg)))/5
 ```
 
 ```{r}
@@ -186,6 +195,8 @@ plot(QB.DF$X40.Yard.Dash, QB.DF$Rtg, xlab = "40 Yard Dash (s)", ylab = "Passer R
 abline(reg = lm(Rtg~X40.Yard.Dash, data = QB.DF), col = "Red")
 lm(Rtg~X40.Yard.Dash, data = QB.DF)
 cor(QB.DF$X40.Yard.Dash, QB.DF$Rtg, use = "complete")
+
+(abs(cor(QB.DF$X40.Yard.Dash, QB.DF$GS.Years.Since.Draft, use = "complete"))+abs(cor(QB.DF$X40.Yard.Dash, QB.DF$Cmp.., use = "complete"))+abs(cor(QB.DF$X40.Yard.Dash, QB.DF$TD.INT, use = "complete"))+abs(cor(QB.DF$X40.Yard.Dash, QB.DF$Win.., use = "complete"))+abs(cor(QB.DF$X40.Yard.Dash, QB.DF$Rtg, use = "complete")))/5
 ```
 
 ```{r}
@@ -213,6 +224,8 @@ plot(QB.DF$Vert, QB.DF$Rtg, xlab = "Vertical jump (in)", ylab = "Passer Rating",
 abline(reg = lm(Rtg~Vert, data = QB.DF), col = "Red")
 lm(Rtg~Vert, data = QB.DF)
 cor(QB.DF$Vert, QB.DF$Rtg, use = "complete")
+
+(abs(cor(QB.DF$Vert, QB.DF$GS.Years.Since.Draft, use = "complete"))+abs(cor(QB.DF$Vert, QB.DF$Cmp.., use = "complete"))+abs(cor(QB.DF$Vert, QB.DF$TD.INT, use = "complete"))+abs(cor(QB.DF$Vert, QB.DF$Win.., use = "complete"))+abs(cor(QB.DF$Vert, QB.DF$Rtg, use = "complete")))/5
 ```
 
 ```{r}
@@ -240,6 +253,8 @@ plot(QB.DF$Broad, QB.DF$Rtg, xlab = "Broad (in)", ylab = "Passer Rating", main =
 abline(reg = lm(Rtg~Broad, data = QB.DF), col = "Red")
 lm(Rtg~Broad, data = QB.DF)
 cor(QB.DF$Broad, QB.DF$Rtg, use = "complete")
+
+(abs(cor(QB.DF$Broad, QB.DF$GS.Years.Since.Draft, use = "complete"))+abs(cor(QB.DF$Broad, QB.DF$Cmp.., use = "complete"))+abs(cor(QB.DF$Broad, QB.DF$TD.INT, use = "complete"))+abs(cor(QB.DF$Broad, QB.DF$Win.., use = "complete"))+abs(cor(QB.DF$Broad, QB.DF$Rtg, use = "complete")))/5
 ```
 
 ```{r}
@@ -267,6 +282,8 @@ plot(QB.DF$X3.Cone, QB.DF$Rtg, xlab = "3 Cone (s)", ylab = "Passer Rating", main
 abline(reg = lm(Rtg~X3.Cone, data = QB.DF), col = "Red")
 lm(Rtg~X3.Cone, data = QB.DF)
 cor(QB.DF$X3.Cone, QB.DF$Rtg, use = "complete")
+
+(abs(cor(QB.DF$X3.Cone, QB.DF$GS.Years.Since.Draft, use = "complete"))+abs(cor(QB.DF$X3.Cone, QB.DF$Cmp.., use = "complete"))+abs(cor(QB.DF$X3.Cone, QB.DF$TD.INT, use = "complete"))+abs(cor(QB.DF$X3.Cone, QB.DF$Win.., use = "complete"))+abs(cor(QB.DF$X3.Cone, QB.DF$Rtg, use = "complete")))/5
 ```
 
 ```{r}
@@ -294,5 +311,7 @@ plot(QB.DF$X20.Yard.Shuttle, QB.DF$Rtg, xlab = "20 Yard Shuttle (s)", ylab = "Pa
 abline(reg = lm(Rtg~X20.Yard.Shuttle, data = QB.DF), col = "Red")
 lm(Rtg~X20.Yard.Shuttle, data = QB.DF)
 cor(QB.DF$X20.Yard.Shuttle, QB.DF$Rtg, use = "complete")
+
+(abs(cor(QB.DF$X20.Yard.Shuttle, QB.DF$GS.Years.Since.Draft, use = "complete"))+abs(cor(QB.DF$X20.Yard.Shuttle, QB.DF$Cmp.., use = "complete"))+abs(cor(QB.DF$X20.Yard.Shuttle, QB.DF$TD.INT, use = "complete"))+abs(cor(QB.DF$X20.Yard.Shuttle, QB.DF$Win.., use = "complete"))+abs(cor(QB.DF$X20.Yard.Shuttle, QB.DF$Rtg, use = "complete")))/5
 ```
 

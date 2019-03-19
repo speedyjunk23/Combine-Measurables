@@ -1,7 +1,7 @@
 (name, ht, wt, arm len, hand size, 40, vert, broad, 3 cone, 20yrd shuttle)
 
 ```{r}
-QB.HS = c("Baker Mayfield", 72.625, 215, 30.25, 9.25, 4.84, 29, 111, 7, 4.28, 13, .638, 1.93, .462, 
+QB.HS =  c("Baker Mayfield", 72.625, 215, 30.25, 9.25, 4.84, 29, 111, 7, 4.28, 13, .638, 1.93, .462, 
                         "Sam Darnold", 75.375, 221, 31, 9.375, 4.85, 26.5, 105, 6.96, 4.4, 13, .578, 1.13, .307, 
                         "Josh Allen", 76.875, 237, 33.25, 10.125, 4.75, 33.5, 119, 6.9, 4.4, 11, .528, .833, .455, 
                         "Josh Rosen", 76, 226, 31.75, 9.875, 4.92, 31, 111, 7.09, 4.28, 13, .552, .786, .231, 
@@ -59,240 +59,259 @@ abline(reg = lm(GS.Years.Since.Draft~Height, data = QB.DF), col = "Red")
 lm(GS.Years.Since.Draft~Height, data = QB.DF)
 cor(QB.DF$Height, QB.DF$GS.Years.Since.Draft)
 
-plot(QB.DF$Height, QB.DF$Cmp.., xlab = "Height (in)", ylab = "Completion %", main = "Height vs Completion %")
+plot(QB.DF$Height, QB.DF$Cmp.., xlab = "Height (in)", ylab = "Completion %", main = "Height vs Completion %", col = "Blue")
 abline(reg = lm(Cmp..~Height, data = QB.DF), col = "Red")
 lm(Cmp..~Height, data = QB.DF)
 cor(QB.DF$Height, QB.DF$Cmp..)
 
-plot(QB.DF$Height, QB.DF$TD.INT, xlab = "Height (in)", ylab = "TD:INT Ratio", main = "Height vs TD:INT Ratio")
+plot(QB.DF$Height, QB.DF$TD.INT, xlab = "Height (in)", ylab = "TD:INT Ratio", main = "Height vs TD:INT Ratio", col = "Blue")
 abline(reg = lm(TD.INT~Height, data = QB.DF), col = "Red")
 lm(TD.INT~Height, data = QB.DF)
 cor(QB.DF$Height, QB.DF$TD.INT)
 
-plot(QB.DF$Height, QB.DF$Win.., xlab = "Height (in)", ylab = "Win %", main = "Height vs Win %")
+plot(QB.DF$Height, QB.DF$Win.., xlab = "Height (in)", ylab = "Win %", main = "Height vs Win %", col = "Blue")
 abline(reg = lm(Win..~Height, data = QB.DF), col = "Red")
 lm(Win..~Height, data = QB.DF)
 cor(QB.DF$Height, QB.DF$Win..)
 
-plot(QB.DF$Height, QB.DF$Rtg, xlab = "Height (in)", ylab = "Passer Rating", main = "Height vs Rtg")
+plot(QB.DF$Height, QB.DF$Rtg, xlab = "Height (in)", ylab = "Passer Rating", main = "Height vs Rtg", col = "Blue")
 abline(reg = lm(Rtg~Height, data = QB.DF), col = "Red")
 lm(Rtg~Height, data = QB.DF)
 cor(QB.DF$Height, QB.DF$Rtg)
+
+(abs(cor(QB.DF$Height, QB.DF$GS.Years.Since.Draft))+abs(cor(QB.DF$Height, QB.DF$Cmp..))+abs(cor(QB.DF$Height, QB.DF$TD.INT))+abs(cor(QB.DF$Height, QB.DF$Win..))+abs(cor(QB.DF$Height, QB.DF$Rtg)))/5
 ```
 
 ```{r}
-plot(QB.DF$Weight, QB.DF$GS.Years.Since.Draft, xlab = "Weight (lbs)", ylab = "Average Games Started Since Draft Year", main = "Weight vs Games Started")
+plot(QB.DF$Weight, QB.DF$GS.Years.Since.Draft, xlab = "Weight (lbs)", ylab = "Average Games Started Since Draft Year", main = "Weight vs Games Started", col = "Blue")
 abline(reg = lm(GS.Years.Since.Draft~Weight, data = QB.DF), col = "Red")
 lm(GS.Years.Since.Draft~Weight, data = QB.DF)
 cor(QB.DF$Weight, QB.DF$GS.Years.Since.Draft)
 
-plot(QB.DF$Weight, QB.DF$Cmp.., xlab = "Weight (lbs)", ylab = "Completion %", main = "Weight vs Completion %")
+plot(QB.DF$Weight, QB.DF$Cmp.., xlab = "Weight (lbs)", ylab = "Completion %", main = "Weight vs Completion %", col = "Blue")
 abline(reg = lm(Cmp..~Weight, data = QB.DF), col = "Red")
 lm(Cmp..~Weight, data = QB.DF)
 cor(QB.DF$Weight, QB.DF$Cmp..)
 
-plot(QB.DF$Weight, QB.DF$TD.INT, xlab = "Weight(lbs)", ylab = "TD:INT Ratio", main = "Weight vs TD:INT Ratio")
+plot(QB.DF$Weight, QB.DF$TD.INT, xlab = "Weight(lbs)", ylab = "TD:INT Ratio", main = "Weight vs TD:INT Ratio", col = "Blue")
 abline(reg = lm(TD.INT~Weight, data = QB.DF), col = "Red")
 lm(TD.INT~Weight, data = QB.DF)
 cor(QB.DF$Weight, QB.DF$TD.INT)
 
-plot(QB.DF$Weight, QB.DF$Win.., xlab = "Weight (lbs)", ylab = "Win %", main = "Weight vs Win %")
+plot(QB.DF$Weight, QB.DF$Win.., xlab = "Weight (lbs)", ylab = "Win %", main = "Weight vs Win %", col = "Blue")
 abline(reg = lm(Win..~Weight, data = QB.DF), col = "Red")
 lm(Win..~Weight, data = QB.DF)
 cor(QB.DF$Weight, QB.DF$Win..)
 
-plot(QB.DF$Weight, QB.DF$Rtg, xlab = "Weight (lbs)", ylab = "Passer Rating", main = "Weight vs Rtg")
+plot(QB.DF$Weight, QB.DF$Rtg, xlab = "Weight (lbs)", ylab = "Passer Rating", main = "Weight vs Rtg", col = "Blue")
 abline(reg = lm(Rtg~Weight, data = QB.DF), col = "Red")
 lm(Rtg~Weight, data = QB.DF)
 cor(QB.DF$Weight, QB.DF$Rtg)
+
+(abs(cor(QB.DF$Weight, QB.DF$GS.Years.Since.Draft))+abs(cor(QB.DF$Weight, QB.DF$Cmp..))+abs(cor(QB.DF$Weight, QB.DF$TD.INT))+abs(cor(QB.DF$Weight, QB.DF$Win..))+abs(cor(QB.DF$Weight, QB.DF$Rtg)))/5
 ```
 
 ```{r}
-plot(QB.DF$Arm.Size, QB.DF$GS.Years.Since.Draft, xlab = "Arm Size (in)", ylab = "Average Games Started Since Draft Year", main = "Arm Size vs Games Started")
+plot(QB.DF$Arm.Size, QB.DF$GS.Years.Since.Draft, xlab = "Arm Size (in)", ylab = "Average Games Started Since Draft Year", main = "Arm Size vs Games Started", col = "Blue")
 abline(reg = lm(GS.Years.Since.Draft~Arm.Size, data = QB.DF), col = "Red")
 lm(GS.Years.Since.Draft~Arm.Size, data = QB.DF)
 cor(QB.DF$Arm.Size, QB.DF$GS.Years.Since.Draft)
 
-plot(QB.DF$Arm.Size, QB.DF$Cmp.., xlab = "Arm Size (in)", ylab = "Completion %", main = "Arm Size vs Completion %")
+plot(QB.DF$Arm.Size, QB.DF$Cmp.., xlab = "Arm Size (in)", ylab = "Completion %", main = "Arm Size vs Completion %", col = "Blue")
 abline(reg = lm(Cmp..~Arm.Size, data = QB.DF), col = "Red")
 lm(Cmp..~Arm.Size, data = QB.DF)
 cor(QB.DF$Arm.Size, QB.DF$Cmp..)
 
-plot(QB.DF$Arm.Size, QB.DF$TD.INT, xlab = "Arm Size (in)", ylab = "TD:INT Ratio", main = "Arm Size vs TD:INT Ratio")
+plot(QB.DF$Arm.Size, QB.DF$TD.INT, xlab = "Arm Size (in)", ylab = "TD:INT Ratio", main = "Arm Size vs TD:INT Ratio", col = "Blue")
 abline(reg = lm(TD.INT~Arm.Size, data = QB.DF), col = "Red")
 lm(TD.INT~Arm.Size, data = QB.DF)
 cor(QB.DF$Arm.Size, QB.DF$TD.INT)
 
-plot(QB.DF$Arm.Size, QB.DF$Win.., xlab = "Arm Size (in)", ylab = "Win %", main = "Arm Size vs Win %")
+plot(QB.DF$Arm.Size, QB.DF$Win.., xlab = "Arm Size (in)", ylab = "Win %", main = "Arm Size vs Win %", col = "Blue")
 abline(reg = lm(Win..~Arm.Size, data = QB.DF), col = "Red")
 lm(Win..~Arm.Size, data = QB.DF)
 cor(QB.DF$Arm.Size, QB.DF$Win..)
 
-plot(QB.DF$Arm.Size, QB.DF$Rtg, xlab = "Arm Size (in)", ylab = "Passer Rating", main = "Arm Size vs Rtg")
+plot(QB.DF$Arm.Size, QB.DF$Rtg, xlab = "Arm Size (in)", ylab = "Passer Rating", main = "Arm Size vs Rtg", col = "Blue")
 abline(reg = lm(Rtg~Arm.Size, data = QB.DF), col = "Red")
 lm(Rtg~Arm.Size, data = QB.DF)
 cor(QB.DF$Arm.Size, QB.DF$Rtg)
+
+
+(abs(cor(QB.DF$Arm.Size, QB.DF$GS.Years.Since.Draft))+abs(cor(QB.DF$Arm.Size, QB.DF$Cmp..))+abs(cor(QB.DF$Arm.Size, QB.DF$TD.INT))+abs(cor(QB.DF$Arm.Size, QB.DF$Win..))+abs(cor(QB.DF$Arm.Size, QB.DF$Rtg)))/5
 ```
 
 ```{r}
-plot(QB.DF$Hand.Size, QB.DF$GS.Years.Since.Draft, xlab = "Hand Size (in)", ylab = "Average Games Started Since Draft Year", main = "Hand Size vs Games Started")
+plot(QB.DF$Hand.Size, QB.DF$GS.Years.Since.Draft, xlab = "Hand Size (in)", ylab = "Average Games Started Since Draft Year", main = "Hand Size vs Games Started", col = "Blue")
 abline(reg = lm(GS.Years.Since.Draft~Hand.Size, data = QB.DF), col = "Red")
 lm(GS.Years.Since.Draft~Hand.Size, data = QB.DF)
 cor(QB.DF$Hand.Size, QB.DF$GS.Years.Since.Draft)
 
-plot(QB.DF$Hand.Size, QB.DF$Cmp.., xlab = "Hand Size (in)", ylab = "Completion %", main = "Hand Size vs Completion %")
+plot(QB.DF$Hand.Size, QB.DF$Cmp.., xlab = "Hand Size (in)", ylab = "Completion %", main = "Hand Size vs Completion %", col = "Blue")
 abline(reg = lm(Cmp..~Hand.Size, data = QB.DF), col = "Red")
 lm(Cmp..~Hand.Size, data = QB.DF)
 cor(QB.DF$Hand.Size, QB.DF$Cmp..)
 
-plot(QB.DF$Hand.Size, QB.DF$TD.INT, xlab = "Hand Size (in)", ylab = "TD:INT Ratio", main = "Hand Size vs TD:INT Ratio")
+plot(QB.DF$Hand.Size, QB.DF$TD.INT, xlab = "Hand Size (in)", ylab = "TD:INT Ratio", main = "Hand Size vs TD:INT Ratio", col = "Blue")
 abline(reg = lm(TD.INT~Hand.Size, data = QB.DF), col = "Red")
 lm(TD.INT~Hand.Size, data = QB.DF)
 cor(QB.DF$Hand.Size, QB.DF$TD.INT)
 
-plot(QB.DF$Hand.Size, QB.DF$Win.., xlab = "Hand Size (in)", ylab = "Win %", main = "Hand Size vs Win %")
+plot(QB.DF$Hand.Size, QB.DF$Win.., xlab = "Hand Size (in)", ylab = "Win %", main = "Hand Size vs Win %", col = "Blue")
 abline(reg = lm(Win..~Hand.Size, data = QB.DF), col = "Red")
 lm(Win..~Hand.Size, data = QB.DF)
 cor(QB.DF$Hand.Size, QB.DF$Win..)
 
-plot(QB.DF$Hand.Size, QB.DF$Rtg, xlab = "Hand Size (in)", ylab = "Passer Rating", main = "Hand Size vs Rtg")
+plot(QB.DF$Hand.Size, QB.DF$Rtg, xlab = "Hand Size (in)", ylab = "Passer Rating", main = "Hand Size vs Rtg", col = "Blue")
 abline(reg = lm(Rtg~Hand.Size, data = QB.DF), col = "Red")
 lm(Rtg~Hand.Size, data = QB.DF)
 cor(QB.DF$Hand.Size, QB.DF$Rtg)
+
+(abs(cor(QB.DF$Hand.Size, QB.DF$GS.Years.Since.Draft))+abs(cor(QB.DF$Hand.Size, QB.DF$Cmp..))+abs(cor(QB.DF$Hand.Size, QB.DF$TD.INT))+abs(cor(QB.DF$Hand.Size, QB.DF$Win..))+abs(cor(QB.DF$Hand.Size, QB.DF$Rtg)))/5
 ```
 
 ```{r}
-plot(QB.DF$X40.Yard.Dash, QB.DF$GS.Years.Since.Draft, xlab = "40 Yard Dash (s)", ylab = "Average Games Started Since Draft Year", main = "40 Yard Dash vs Games Started")
+plot(QB.DF$X40.Yard.Dash, QB.DF$GS.Years.Since.Draft, xlab = "40 Yard Dash (s)", ylab = "Average Games Started Since Draft Year", main = "40 Yard Dash vs Games Started", col = "Blue")
 abline(reg = lm(GS.Years.Since.Draft~X40.Yard.Dash, data = QB.DF), col = "Red")
 lm(GS.Years.Since.Draft~X40.Yard.Dash, data = QB.DF)
 cor(QB.DF$X40.Yard.Dash, QB.DF$GS.Years.Since.Draft, use = "complete")
 
-plot(QB.DF$X40.Yard.Dash, QB.DF$Cmp.., xlab = "40 Yard Dash (s)", ylab = "Completion %", main = "40 Yard Dash vs Completion %")
+plot(QB.DF$X40.Yard.Dash, QB.DF$Cmp.., xlab = "40 Yard Dash (s)", ylab = "Completion %", main = "40 Yard Dash vs Completion %", col = "Blue")
 abline(reg = lm(Cmp..~X40.Yard.Dash, data = QB.DF), col = "Red")
 lm(Cmp..~X40.Yard.Dash, data = QB.DF)
 cor(QB.DF$X40.Yard.Dash, QB.DF$Cmp.., use = "complete")
 
-plot(QB.DF$X40.Yard.Dash, QB.DF$TD.INT, xlab = "40 Yard Dash (s)", ylab = "TD:INT Ratio", main = "40 Yard Dash vs TD:INT Ratio")
+plot(QB.DF$X40.Yard.Dash, QB.DF$TD.INT, xlab = "40 Yard Dash (s)", ylab = "TD:INT Ratio", main = "40 Yard Dash vs TD:INT Ratio", col = "Blue")
 abline(reg = lm(TD.INT~X40.Yard.Dash, data = QB.DF), col = "Red")
 lm(TD.INT~X40.Yard.Dash, data = QB.DF)
 cor(QB.DF$X40.Yard.Dash, QB.DF$TD.INT, use = "complete")
 
-plot(QB.DF$X40.Yard.Dash, QB.DF$Win.., xlab = "40 Yard Dash (s)", ylab = "Win %", main = "40 Yard Dash vs Win %")
+plot(QB.DF$X40.Yard.Dash, QB.DF$Win.., xlab = "40 Yard Dash (s)", ylab = "Win %", main = "40 Yard Dash vs Win %", col = "Blue")
 abline(reg = lm(Win..~X40.Yard.Dash, data = QB.DF), col = "Red")
 lm(Win..~X40.Yard.Dash, data = QB.DF)
 cor(QB.DF$X40.Yard.Dash, QB.DF$Win.., use = "complete")
 
-plot(QB.DF$X40.Yard.Dash, QB.DF$Rtg, xlab = "40 Yard Dash (s)", ylab = "Passer Rating", main = "40 Yard Dash vs Rtg")
+plot(QB.DF$X40.Yard.Dash, QB.DF$Rtg, xlab = "40 Yard Dash (s)", ylab = "Passer Rating", main = "40 Yard Dash vs Rtg", col = "Blue")
 abline(reg = lm(Rtg~X40.Yard.Dash, data = QB.DF), col = "Red")
 lm(Rtg~X40.Yard.Dash, data = QB.DF)
 cor(QB.DF$X40.Yard.Dash, QB.DF$Rtg, use = "complete")
+
+(abs(cor(QB.DF$X40.Yard.Dash, QB.DF$GS.Years.Since.Draft, use = "complete"))+abs(cor(QB.DF$X40.Yard.Dash, QB.DF$Cmp.., use = "complete"))+abs(cor(QB.DF$X40.Yard.Dash, QB.DF$TD.INT, use = "complete"))+abs(cor(QB.DF$X40.Yard.Dash, QB.DF$Win.., use = "complete"))+abs(cor(QB.DF$X40.Yard.Dash, QB.DF$Rtg, use = "complete")))/5
 ```
 
 ```{r}
-plot(QB.DF$Vert, QB.DF$GS.Years.Since.Draft, xlab = "Vertical Jump (in)", ylab = "Average Games Started Since Draft Year", main = "Vert vs Games Started")
+plot(QB.DF$Vert, QB.DF$GS.Years.Since.Draft, xlab = "Vertical Jump (in)", ylab = "Average Games Started Since Draft Year", main = "Vert vs Games Started", col = "Blue")
 abline(reg = lm(GS.Years.Since.Draft~Vert, data = QB.DF), col = "Red")
 lm(GS.Years.Since.Draft~Vert, data = QB.DF)
 cor(QB.DF$Vert, QB.DF$GS.Years.Since.Draft, use = "complete")
 
-plot(QB.DF$Vert, QB.DF$Cmp.., xlab = "Vertical Jump (in)", ylab = "Completion %", main = "Vert vs Completion %")
+plot(QB.DF$Vert, QB.DF$Cmp.., xlab = "Vertical Jump (in)", ylab = "Completion %", main = "Vert vs Completion %", col = "Blue")
 abline(reg = lm(Cmp..~Vert, data = QB.DF), col = "Red")
 lm(Cmp..~Vert, data = QB.DF)
 cor(QB.DF$Vert, QB.DF$Cmp.., use = "complete")
 
-plot(QB.DF$Vert, QB.DF$TD.INT, xlab = "Vertical Jump (in)", ylab = "TD:INT Ratio", main = "Vert vs TD:INT Ratio")
+plot(QB.DF$Vert, QB.DF$TD.INT, xlab = "Vertical Jump (in)", ylab = "TD:INT Ratio", main = "Vert vs TD:INT Ratio", col = "Blue")
 abline(reg = lm(TD.INT~Vert, data = QB.DF), col = "Red")
 lm(TD.INT~Vert, data = QB.DF)
 cor(QB.DF$Vert, QB.DF$TD.INT, use = "complete")
 
-plot(QB.DF$Vert, QB.DF$Win.., xlab = "Vertical Jump (in)", ylab = "Win %", main = "Vert vs Win %")
+plot(QB.DF$Vert, QB.DF$Win.., xlab = "Vertical Jump (in)", ylab = "Win %", main = "Vert vs Win %", col = "Blue")
 abline(reg = lm(Win..~Vert, data = QB.DF), col = "Red")
 lm(Win..~Vert, data = QB.DF)
 cor(QB.DF$Vert, QB.DF$Win.., use = "complete")
 
-plot(QB.DF$Vert, QB.DF$Rtg, xlab = "Vertical jump (in)", ylab = "Passer Rating", main = "Vert vs Rtg")
+plot(QB.DF$Vert, QB.DF$Rtg, xlab = "Vertical jump (in)", ylab = "Passer Rating", main = "Vert vs Rtg", col = "Blue")
 abline(reg = lm(Rtg~Vert, data = QB.DF), col = "Red")
 lm(Rtg~Vert, data = QB.DF)
 cor(QB.DF$Vert, QB.DF$Rtg, use = "complete")
+
+(abs(cor(QB.DF$Vert, QB.DF$GS.Years.Since.Draft, use = "complete"))+abs(cor(QB.DF$Vert, QB.DF$Cmp.., use = "complete"))+abs(cor(QB.DF$Vert, QB.DF$TD.INT, use = "complete"))+abs(cor(QB.DF$Vert, QB.DF$Win.., use = "complete"))+abs(cor(QB.DF$Vert, QB.DF$Rtg, use = "complete")))/5
 ```
 
 ```{r}
-plot(QB.DF$Broad, QB.DF$GS.Years.Since.Draft, xlab = "Broad (in)", ylab = "Average Games Started Since Draft Year", main = "Broad vs Games Started")
+plot(QB.DF$Broad, QB.DF$GS.Years.Since.Draft, xlab = "Broad (in)", ylab = "Average Games Started Since Draft Year", main = "Broad vs Games Started", col = "Blue")
 abline(reg = lm(GS.Years.Since.Draft~Broad, data = QB.DF), col = "Red")
 lm(GS.Years.Since.Draft~Broad, data = QB.DF)
 cor(QB.DF$Broad, QB.DF$GS.Years.Since.Draft, use = "complete")
 
-plot(QB.DF$Broad, QB.DF$Cmp.., xlab = "Broad (in)", ylab = "Completion %", main = "Broad vs Completion %")
+plot(QB.DF$Broad, QB.DF$Cmp.., xlab = "Broad (in)", ylab = "Completion %", main = "Broad vs Completion %", col = "Blue")
 abline(reg = lm(Cmp..~Broad, data = QB.DF), col = "Red")
 lm(Cmp..~Broad, data = QB.DF)
 cor(QB.DF$Broad, QB.DF$Cmp.., use = "complete")
 
-plot(QB.DF$Broad, QB.DF$TD.INT, xlab = "Broad (in)", ylab = "TD:INT Ratio", main = "Broad vs TD:INT Ratio")
+plot(QB.DF$Broad, QB.DF$TD.INT, xlab = "Broad (in)", ylab = "TD:INT Ratio", main = "Broad vs TD:INT Ratio", col = "Blue")
 abline(reg = lm(TD.INT~Broad, data = QB.DF), col = "Red")
 lm(TD.INT~Broad, data = QB.DF)
 cor(QB.DF$Broad, QB.DF$TD.INT, use = "complete")
 
-plot(QB.DF$Broad, QB.DF$Win.., xlab = "Broad (in)", ylab = "Win %", main = "Broad vs Win %")
+plot(QB.DF$Broad, QB.DF$Win.., xlab = "Broad (in)", ylab = "Win %", main = "Broad vs Win %", col = "Blue")
 abline(reg = lm(Win..~Broad, data = QB.DF), col = "Red")
 lm(Win..~Broad, data = QB.DF)
 cor(QB.DF$Broad, QB.DF$Win.., use = "complete")
 
-plot(QB.DF$Broad, QB.DF$Rtg, xlab = "Broad (in)", ylab = "Passer Rating", main = "Broad vs Rtg")
+plot(QB.DF$Broad, QB.DF$Rtg, xlab = "Broad (in)", ylab = "Passer Rating", main = "Broad vs Rtg", col = "Blue")
 abline(reg = lm(Rtg~Broad, data = QB.DF), col = "Red")
 lm(Rtg~Broad, data = QB.DF)
 cor(QB.DF$Broad, QB.DF$Rtg, use = "complete")
+
+(abs(cor(QB.DF$Broad, QB.DF$GS.Years.Since.Draft, use = "complete"))+abs(cor(QB.DF$Broad, QB.DF$Cmp.., use = "complete"))+abs(cor(QB.DF$Broad, QB.DF$TD.INT, use = "complete"))+abs(cor(QB.DF$Broad, QB.DF$Win.., use = "complete"))+abs(cor(QB.DF$Broad, QB.DF$Rtg, use = "complete")))/5
 ```
 
 ```{r}
-plot(QB.DF$X3.Cone, QB.DF$GS.Years.Since.Draft, xlab = "3 Cone (s)", ylab = "Average Games Started Since Draft Year", main = "3 Cone vs Games Started")
+plot(QB.DF$X3.Cone, QB.DF$GS.Years.Since.Draft, xlab = "3 Cone (s)", ylab = "Average Games Started Since Draft Year", main = "3 Cone vs Games Started", col = "Blue")
 abline(reg = lm(GS.Years.Since.Draft~X3.Cone, data = QB.DF), col = "Red")
 lm(GS.Years.Since.Draft~X3.Cone, data = QB.DF)
 cor(QB.DF$X3.Cone, QB.DF$GS.Years.Since.Draft, use = "complete")
 
-plot(QB.DF$X3.Cone, QB.DF$Cmp.., xlab = "3 Cone (s)", ylab = "Completion %", main = "3 Cone vs Completion %")
+plot(QB.DF$X3.Cone, QB.DF$Cmp.., xlab = "3 Cone (s)", ylab = "Completion %", main = "3 Cone vs Completion %", col = "Blue")
 abline(reg = lm(Cmp..~X3.Cone, data = QB.DF), col = "Red")
 lm(Cmp..~X3.Cone, data = QB.DF)
 cor(QB.DF$X3.Cone, QB.DF$Cmp.., use = "complete")
 
-plot(QB.DF$X3.Cone, QB.DF$TD.INT, xlab = "3 Cone (s)", ylab = "TD:INT Ratio", main = "3 Cone vs TD:INT Ratio")
+plot(QB.DF$X3.Cone, QB.DF$TD.INT, xlab = "3 Cone (s)", ylab = "TD:INT Ratio", main = "3 Cone vs TD:INT Ratio", col = "Blue")
 abline(reg = lm(TD.INT~X3.Cone, data = QB.DF), col = "Red")
 lm(TD.INT~X3.Cone, data = QB.DF)
 cor(QB.DF$X3.Cone, QB.DF$TD.INT, use = "complete")
 
-plot(QB.DF$X3.Cone, QB.DF$Win.., xlab = "3 Cone (s)", ylab = "Win %", main = "3 Cone vs Win %")
+plot(QB.DF$X3.Cone, QB.DF$Win.., xlab = "3 Cone (s)", ylab = "Win %", main = "3 Cone vs Win %", col = "Blue")
 abline(reg = lm(Win..~X3.Cone, data = QB.DF), col = "Red")
 lm(Win..~X3.Cone, data = QB.DF)
 cor(QB.DF$X3.Cone, QB.DF$Win.., use = "complete")
 
-plot(QB.DF$X3.Cone, QB.DF$Rtg, xlab = "3 Cone (s)", ylab = "Passer Rating", main = "3 Cone vs Rtg")
+plot(QB.DF$X3.Cone, QB.DF$Rtg, xlab = "3 Cone (s)", ylab = "Passer Rating", main = "3 Cone vs Rtg", col = "Blue")
 abline(reg = lm(Rtg~X3.Cone, data = QB.DF), col = "Red")
 lm(Rtg~X3.Cone, data = QB.DF)
 cor(QB.DF$X3.Cone, QB.DF$Rtg, use = "complete")
+
+(abs(cor(QB.DF$X3.Cone, QB.DF$GS.Years.Since.Draft, use = "complete"))+abs(cor(QB.DF$X3.Cone, QB.DF$Cmp.., use = "complete"))+abs(cor(QB.DF$X3.Cone, QB.DF$TD.INT, use = "complete"))+abs(cor(QB.DF$X3.Cone, QB.DF$Win.., use = "complete"))+abs(cor(QB.DF$X3.Cone, QB.DF$Rtg, use = "complete")))/5
 ```
 
 ```{r}
-plot(QB.DF$X20.Yard.Shuttle, QB.DF$GS.Years.Since.Draft, xlab = "20 Yard Shuttle (s)", ylab = "Average Games Started Since Draft Year", main = "20 Yard Shuttle vs Games Started")
+plot(QB.DF$X20.Yard.Shuttle, QB.DF$GS.Years.Since.Draft, xlab = "20 Yard Shuttle (s)", ylab = "Average Games Started Since Draft Year", main = "20 Yard Shuttle vs Games Started", col = "Blue")
 abline(reg = lm(GS.Years.Since.Draft~X20.Yard.Shuttle, data = QB.DF), col = "Red")
 lm(GS.Years.Since.Draft~X20.Yard.Shuttle, data = QB.DF)
 cor(QB.DF$X20.Yard.Shuttle, QB.DF$GS.Years.Since.Draft, use = "complete")
 
-plot(QB.DF$X20.Yard.Shuttle, QB.DF$Cmp.., xlab = "20 Yard Shuttle (s)", ylab = "Completion %", main = "20 Yard Shuttle vs Completion %")
+plot(QB.DF$X20.Yard.Shuttle, QB.DF$Cmp.., xlab = "20 Yard Shuttle (s)", ylab = "Completion %", main = "20 Yard Shuttle vs Completion %", col = "Blue")
 abline(reg = lm(Cmp..~X20.Yard.Shuttle, data = QB.DF), col = "Red")
 lm(Cmp..~X20.Yard.Shuttle, data = QB.DF)
 cor(QB.DF$X20.Yard.Shuttle, QB.DF$Cmp.., use = "complete")
 
-plot(QB.DF$X20.Yard.Shuttle, QB.DF$TD.INT, xlab = "20 Yard Shuttle (s)", ylab = "TD:INT Ratio", main = "20 Yard Shuttle vs TD:INT Ratio")
+plot(QB.DF$X20.Yard.Shuttle, QB.DF$TD.INT, xlab = "20 Yard Shuttle (s)", ylab = "TD:INT Ratio", main = "20 Yard Shuttle vs TD:INT Ratio", col = "Blue")
 abline(reg = lm(TD.INT~X20.Yard.Shuttle, data = QB.DF), col = "Red")
 lm(TD.INT~X20.Yard.Shuttle, data = QB.DF)
 cor(QB.DF$X20.Yard.Shuttle, QB.DF$TD.INT, use = "complete")
 
-plot(QB.DF$X20.Yard.Shuttle, QB.DF$Win.., xlab = "20 Yard Shuttle (s)", ylab = "Win %", main = "20 Yard Shuttle vs Win %")
+plot(QB.DF$X20.Yard.Shuttle, QB.DF$Win.., xlab = "20 Yard Shuttle (s)", ylab = "Win %", main = "20 Yard Shuttle vs Win %", col = "Blue")
 abline(reg = lm(Win..~X20.Yard.Shuttle, data = QB.DF), col = "Red")
 lm(Win..~X20.Yard.Shuttle, data = QB.DF)
 cor(QB.DF$X20.Yard.Shuttle, QB.DF$Win.., use = "complete")
 
-plot(QB.DF$X20.Yard.Shuttle, QB.DF$Rtg, xlab = "20 Yard Shuttle (s)", ylab = "Passer Rating", main = "20 Yard Shuttle vs Rtg")
+plot(QB.DF$X20.Yard.Shuttle, QB.DF$Rtg, xlab = "20 Yard Shuttle (s)", ylab = "Passer Rating", main = "20 Yard Shuttle vs Rtg", col = "Blue")
 abline(reg = lm(Rtg~X20.Yard.Shuttle, data = QB.DF), col = "Red")
 lm(Rtg~X20.Yard.Shuttle, data = QB.DF)
 cor(QB.DF$X20.Yard.Shuttle, QB.DF$Rtg, use = "complete")
+
+(abs(cor(QB.DF$X20.Yard.Shuttle, QB.DF$GS.Years.Since.Draft, use = "complete"))+abs(cor(QB.DF$X20.Yard.Shuttle, QB.DF$Cmp.., use = "complete"))+abs(cor(QB.DF$X20.Yard.Shuttle, QB.DF$TD.INT, use = "complete"))+abs(cor(QB.DF$X20.Yard.Shuttle, QB.DF$Win.., use = "complete"))+abs(cor(QB.DF$X20.Yard.Shuttle, QB.DF$Rtg, use = "complete")))/5
 ```
 
